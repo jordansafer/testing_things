@@ -32,4 +32,9 @@ workflows:
       - say-hello
   say-hello-workflow:
     jobs:
-      - say-hello
+      - say-hello:
+          filters:
+            tags:
+              only: /.*hotfix.*/
+            branches:
+              ignore: /.*/
