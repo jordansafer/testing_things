@@ -25,6 +25,9 @@ workflows:
     triggers:
       - schedule:
           cron: "*/5 * * * *"
+          filters:
+            branches:
+              only: main
     jobs:
       - say-hello
   say-hello-workflow:
